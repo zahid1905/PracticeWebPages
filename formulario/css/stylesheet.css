@@ -1,0 +1,55 @@
+/****************
+GENERAL
+****************/
+
+html {
+    font-size: 23px;
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+header {
+	display: block;
+    margin: 0px auto;
+    margin-bottom: 50px;
+	font-size: 2em;
+}
+
+body {
+    color: #ffffff;
+}
+
+body a, body a:visited {
+    color: #616E87;
+}
+
+section{
+	margin-left:15%;
+	margin-right:15%;
+}
+
+body a:hover {
+    color: #8FBCBB;
+}
+
+.main ul {
+    background-color: #202020;
+}
+
+input{
+	border: 1px dotted #999;
+    border-radius: 30px;
+}
+
+/****************
+HORA y FECHA
+****************/
+
+time {
+	margin-left: 75%;
+    display: inline;
+    font-family: 'MIRAI-BOLD', sans-serif;
+    text-align: right;
+    font-weight: 300;
+}

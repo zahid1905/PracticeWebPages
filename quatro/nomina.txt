@@ -1,0 +1,51 @@
+DROP DATABASE IF EXISTS nomina;
+create database nomina;
+use nomina;
+DROP TABLE IF EXISTS pago;
+create table pago(n_trab int(4) not null auto_increment, nombre varchar(15), appaterno varchar(15),
+apmaterno varchar(15), f_ingreso date, sueldo float, retencion float, comision float,
+pago float, primary key(n_trab));
+insert into pago values
+(null,'ramon','sanchez','santoyo','2000/12/11',1500,120,300,1680);
+(null,'daniela','sanchez','rangel','2001/10/09',1000,100,200,1100),
+(null,'jose','mendez','zarasua','1999/01/20',2000,200,400,2200),
+(null,'jorge','perez','velazquez','2002/12/29',2500,180,350,2670),
+(null,'renata','olvera','mendez','2000/10/18',2000,200,400,2200),
+(null,'gilberto','alvarez','mendieta','1998/07/05',3500,350,400,3550),
+(null,'pedro','arredondo','gonzales','1996/01/03',1500,120,300,1680),
+(null,'leticia','gonzales','muñoz','2003/03/06',2500,180,350,2670),
+(null,'ramon','espitia','arnes','2000/09/18',5000,200,400,5200),
+(null,'isidro','salazar','medina','1979/11/15',2500,180,300,2620),
+(null,'sandra','ramirez','ramirez','2004/03/04',2000,200,400,2200),
+(null,'miguel','ramirez','ramirez','2001/10/22',2000,200,400,2200),
+(null,'alaide','mendez','sanchez','2001/07/26',5000,300,200,4900),
+(null,'bryan','mares','arvizu','1995/11/01',1500,120,300,1680),
+(null,'nohemi','villanueva','ceron','1981/04/13',8000,400,1000,8600);
+//Ordenar registros de la a-z:
+select * from pago order by nombre;
+//Ordenar registros de la z-a:
+select * from pago order by nombre desc;
+//Mostrar la informacion dde todos los que tengan appaterno='ramirez' ordenado por fecha de ingreso:
+select * from pago where appaterno='ramirez' order by f_ingreso;
+//Mostrar solo el nombre, appaterno, f_ingreso y sueldo de todas las personas, ordenados por el sueldo:
+select nombre,appaterno,f_ingreso,sueldo from pago order by sueldo desc;
+//Mostrar la clave, nombre, sueldo y retencion de las ultimas 6 personas ordenada por el trabajador que menos retenciones tiene
+select n_trab,nombre,sueldo,retencion from pago where n_trab>9 order by retencion;
+//Mostrar el nombre completo de los trabajadores, fecha de ingreso y sueldo ordenados por apellido paterno y sueldo mayor
+select nombre,appaterno,apmaterno,f_ingreso,sueldo from pago order by appaterno and sueldo;
+//Mostrar el nombre completo, el sueldo y la retencion de todos los trabajadores que su sueldo este entre 2000 y 5000 ordenado por la persona con mayor retencion
+select nombre,appaterno,apmaterno,sueldo,retencion from pago where sueldo>=2000 and sueldo<=5000 order by retencion desc;
+//Mostrar el año de registro
+select nombre,year(f_ingreso) from pago;
+//Mostrar el mes de registro
+select nombre,month(f_ingreso) from pago;
+//Mostrar el dia de registro
+select nombre,day(f_ingreso) from pago;
+//Mostrar el año,mes y dia de registro
+select nombre,year(f_ingreso) as Año,month(f_ingreso) as Mes,day(f_ingreso) as Dia from pago;
+//Mostrar los dias laborados hasta la fecha de todas las personas
+select n_trab,nombre,appaterno, datediff(curdate(),f_ingreso) as 'Dias Laborados' from pago;
+//Mostrar los años de antiguedad de las personas ordenadas por nombre
+select nombre,curdate(),f_ingreso,(year(curdate())-year(f_ingreso)) as 'Años de Antiguedad' from pago order by nombre;
+//Mostrar el nombre completo de las personas, su fecha de ingreso
+select nombre,appaterno,apmaterno,f_ingreso from pago where month(f_ingreso)=month(curdate()) and day(f_ingreso)=day(curdate());

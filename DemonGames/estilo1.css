@@ -1,0 +1,85 @@
+form{
+  width: 300px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+  text-align: center;
+}
+.field{
+  padding: 3px;
+  width: 280px;
+  text-align: center;
+}
+.boton{
+  width: 140px;
+}
+.text{
+  text-align: center;
+}
+
+.imagen{
+margin: 15px;
+background: rgba(255,0,0, 0.5);
+width: 60%;
+height: 20%;
+border-radius: 10px;
+}
+
+.logo{
+  width: 260px;
+  border-radius: 10px;
+  }
+
+.titulo{
+  font-family: inherit;
+  text-shadow: 1px 1px 1px #ffFF00;
+
+}
+ul{
+  list-style: none;
+}
+ul li{
+  display: inline-block;
+}
+ul li a{
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 50px;
+}
+ul li a:hover{
+  background-color: #00B7C3;
+}
+.menu{
+  background-color: #000;
+  opacity: 0.7;
+}
+.text-f{
+  text-align: center;
+  color: red;
+  font-size: 25px;
+  font-family: inherit;
+  text-shadow: 1px 1px 1px #000;
+}
+.yolo{
+  color: white;
+}
+table{
+  font-size: 170%;
+  background-color: white;
+  opacity: 0.9;
+  color: black;
+  border-radius: 6px;
+  text-align: center;
+}
+
+tr, td{
+  padding: 30px;
+  
+}
+
+img{
+  width: 150px;
+  border-radius: 10px;
+}

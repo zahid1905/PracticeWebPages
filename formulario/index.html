@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inicio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+		Encuesta<time id="js-clock"></time>
+    </header>
+    <div center class="wrapper">
+      <section class="main">
+		<form action="almacenar.php" method="POST">
+			<fieldset>
+				<legend>Datos personales</legend>
+				Nombre:<br/>
+				<input type="text" name="nombre"><br/>
+				Apellidos:<br/>
+				<input type="text" name="appaterno"> <input type="text" name="apmaterno"><br/>
+				Sexo:<br/>
+				<input type="radio" name="sexo" value="H"> Hombre <input type="radio" name="sexo" value="M"> Mujer<br/>
+				Fecha de nacimiento:<br/>
+				<input type="date" name="nacimiento"><br/>
+				Educacion:<br/>
+				<input type="checkbox" name="edu" value="K"> Kinder <input type="checkbox" name="edu" value="P"> Primaria<br/>
+				<input type="checkbox" name="edu" value="S"> Secundaria <input type="checkbox" name="edu" value="B"> Bachillerato<br/>
+			</fieldset>
+			<fieldset>
+				<legend>Datos de la cuenta</legend>
+				Correo:<br/>
+				<input type="email" name="correo"><br/>
+				Contraseña:<br/>
+				<input type="password" name="contrasena"><br/>
+				Fotografia:<br/>
+				<input type="file" name="foto"><br/>
+				Solicitud:<br/>
+				<input type="file" name="solicitud"><br/>
+				Color de perfil: <br/>
+				<input type="color" name="color"><br/>
+			</fieldset>
+			<input type="submit" name="registrar" value="Enviar"> <input type="reset" name="borrar" value="Limpiar">
+		</form>
+      </section>
+    </div>
+    <script>
+      class Clock {
+        constructor() {
+          this._clockEl = document.getElementById('js-clock');
+          this._dateEl = document.getElementById('js-date');
+          this._setTime = this._setTime.bind(this);
+          this._start();
+        }
+        _pad(num) {
+          return (`0${num.toString()}`).slice(-2);
+        }
+        _setTime() {
+          const date = new Date();
+          const hours = this._pad(date.getHours());
+          const minutes = this._pad(date.getMinutes());
+          this._clockEl.innerHTML = `${hours} : ${minutes}`;
+
+          const year = date.getFullYear();
+          const month = this._pad(date.getMonth());
+          const day = date.getDate();
+
+          var weekdays = new Array(7);
+          weekdays[0] = "Domingo";
+          weekdays[1] = "Lunes";
+          weekdays[2] = "Martes";
+          weekdays[3] = "Miercoles";
+          weekdays[4] = "Jueves";
+          weekdays[5] = "Viernes";
+          weekdays[6] = "Sabado";
+
+          var months = new Array(12);
+          months['00'] = "Enero";
+          months['01'] = "Febrero";
+          months['02'] = "Marzo";
+          months['03'] = "Abril";
+          months['04'] = "Mayo";
+          months['05'] = "Junio";
+          months['06'] = "Julio";
+          months['07'] = "Agosto";
+          months['08'] = "Septiembre";
+          months['09'] = "Octubre";
+          months['10'] = "Novimbre";
+          months['11'] = "Diciembre";
+
+          var weekday   = weekdays[date.getDay()];
+          var fullMonth = months[month];
+
+          this._dateEl.innerHTML = weekday + ', ' + fullMonth + ' ' + day + ' ' + year;
+        }
+        _start() {
+          this._setTime();
+          setInterval(this._setTime, 3000);
+        }
+      }
+      const clock = new Clock();
+    </script>
+  </body>
+</html>
+

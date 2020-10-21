@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Administrador</title>
+		<link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header><h1>Administrador</h1></header>
+		<?php
+			$con=mysqli_connect('localhost',$_POST["usuario"],$_POST["contraseña"],'nomina') or die ('Ocurrio un error al conectarse al servidor') or die ('Usuario o contraseña incorrecta');
+			//$sql="insert into pago values(null,'".$_POST["nombre"]."','".$_POST["appaterno"]."','".$_POST["apmaterno"]."','".$_POST["f_ingreso"]."','".$_POST["sueldo"]."','".$_POST["retencion"]."','".$_POST["comision"]."','".$_POST["pago"]."')";
+			//$resultado=mysqli_query($con,$sql) or die ('Error en query database');
+			mysqli_close($con);
+		?>
+		<input type="button" onclick="location.href='Agragar.html' " value="Agregar libros"/>
+		<input type="button" onclick="location.href='Editar.html' " value="Modificar/Eliminar"/>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+/****************
+GENERAL
+****************/
+
+html {
+    font-size: 23px;
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+header {
+    margin: 0px auto;
+    margin-bottom: 50px;
+}
+
+body {
+    color: #ffffff;
+}
+
+body a, body a:visited {
+    color: #616E87;
+}
+
+section{
+	margin-left:500px;
+	margin-right:500px;
+}
+
+body a:hover {
+    color: #8FBCBB;
+}
+
+.main ul {
+    background-color: #202020;
+}
+
+input[type=text]{
+	border: 1px dotted #999;
+    border-radius: 30px;
+}
+
+input[type=date]{
+    border: 1px dotted #999;
+    border-radius: 30px;
+}
+
+input[type=number]{
+    border: 1px dotted #999;
+    border-radius: 30px;
+}
+
+/****************
+HORA y FECHA
+****************/
+
+time {
+    display: block;
+    font-family: 'MIRAI-BOLD', sans-serif;
+    font-size: 4.2em;
+    text-align: center;
+    font-weight: 300;
+}
+
+.date {
+    display: block;
+    font-family: 'MIRAI-THIN', sans-serif;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: 300;
+    font-weight: Black;
+}

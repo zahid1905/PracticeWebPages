@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+    <div class="menu">
+
+        <div class="yolo" style="display: flex;justify-content: center;">
+
+            <nav>
+
+                <ul>
+                    <dialog id="dialogo1" onclick="closeDialog()">
+                    La aceptación del presente documento contractual, que regirá en la contratación de productos a través del sitio web DeMonGames,
+                    conlleva que el usuario ha leído y comprende lo aquí expuesto. Así mismo posee la capacidad necesaria para contratar asumiendo todas las obligaciones
+                    que se recogen en dicho documento.
+                    Igualmente el prestador se reserva el derecho a modificar las condiciones de uso de la web sin que ello pueda afecta los bienes o promociones que fueron
+                    adquiridos previamente a la modificación. Por este motivo es su responsabilidad leerlas periódicamente ya que las condiciones vigentes en el momento de
+                    uso del sitio web o de la celebración del contrato serán las que se le aplicarán. <br> <br>
+
+                    <b>PROCEDIMIENTO DE CONTRATACIÓN</b>
+                    El procedimiento de contratación únicamente podrá ser realizado en el idioma castellano. En caso de que pudiera llevarse a cabo en cualquier otro idioma será
+                    indicado antes de iniciar el procedimiento de contratación.
+
+                    Ordenar un pedido implica la aceptación completa e incondicional de las condiciones generales de venta. Por tanto el comprador no impondrá condiciones contrarias al vendedor, a menos que hayan sido expresamente aceptadas, independientemente de cuándo sean mandadas a su atención. <br> <br>
+
+                    <i><b>Se informa que de conformidad con el artículo 27 de la Ley 34/2002 de Servicios de la Sociedad de la Información y del Comercio Electrónico, el procedimiento de contratación seguirá los pasos siguientes:</b></i> <br> <br>
+
+                    <u>1. Tramitación del pedido</u>
+                    Una vez finalizado el proceso de selección de artículos se pasa al apartado de confirmación del pedido. Aquí se le solicita al cliente que se identifique en caso de que se hubiera registrado antes, o en caso contrario se le pide que se registre. Esta confirmación hace que el acuerdo entre las partes sea total.<br> <br>
+
+                    <u>2. Registro de clientes</u>
+                    El cliente se registra rellenando en un formulario sus datos personales y de pago, dándose de alta en el sistema con un nombre de usuario y una clave determinada. El usuario se ha de comprometer a hacer uso diligente de los mismos y no ponerlos a disposición de terceros, así como a comunicar al prestador la pérdida, robo o el posible acceso no autorizado de un tercero, para que así se proceda al bloqueo de la plataforma de forma inmediata. <br><br>
+
+                    <u>3. Cesta de la compra</u>
+                    Los artículos que se deseen adquirir deberán ser seleccionados y añadidos a la bolsa de la compra mediante un clic sobre el icono correspondiente.
+
+                    En todo caso la plataforma de contratación del prestador informará al usuario, una vez finalizado el procedimiento de contratación, por vía correo electrónico respecto a todas las características, precio, formas de transporte, fecha de contratación y estimación de entrega del producto o servicio contratado.
+
+                    Los productos aparecidos en la web son ofertados en tiempo real, es decir todos los productos se encuentran disponibles en nuestros almacenes. En caso de falta de existencias de cualquier producto, el cliente podrá realizar un pedido de reserva llamándonos o escribiendo a (correo electrónico de la empresa). Si el cliente ya haya realizado el pago y en su defecto no hubiese stock para poder hacerse la entrega en un plazo de 3 días hábiles, puede llamarnos al (número de teléfono de la empresa) y le devolveremos el importe.<br><br>
+
+                    <b>ENTREGA DE PEDIDOS</b> <br>
+                    1.- Se llevará a cabo una vez comprobado el pago, y se realizará a través de Seur 24Horas. Todos los envíos irán asegurados. <br> <br>
+
+                    2.- La entrega del pedido se realizará en el domicilio designado libremente por el usuario. Así el prestador no asume responsabilidad alguna cuando la entrega no llegue a realizarse como consecuencia de que los datos facilitados sean falsos, inexactos o incompletos o cuando la entrega no pueda efectuarse por causas ajenas a la empresa de envíos como es la ausencia del destinatario. <br> <br>
+
+                    3.- Si se detecta algún deterioro o defecto en el paquete recibido, deberá hacerlo constar antes de firmar el resguardo de recepción de envío. Una vez abierto el paquete deberá comprobar que el estado de la mercancía es correcto, de lo contrario deberá comunicárnoslo en el plazo de 24 horas a partir de la recepción del envío. (Nombre de la empresa) no se hará responsable en modo alguno, si no se cumplen las advertencias citadas anteriormente. <br><br>
+
+                    4.- Si por algún motivo no pudiésemos cumplir con la fecha de entrega le informaremos de esta circunstancia y le daremos la opción de seguir adelante con la compra estableciendo una nueva fecha o bien de anular el pedido con el reembolso total del precio pagado."
+
+                    <p><b>Click para cerrar</b></p>
+                    </dialog>
+                    <script>
+
+                    //REFERENCIA LOS ELEMENTOS
+                      var dialog = document.getElementsByTagName("dialog")[0];
+                      var a = document.getElementsByTagName("a")[0];
+
+                      //MUESTRA EL dialog
+
+                      function showDialog(){
+                          dialog.setAttribute("open","open");
+                          a.setAttribute("close", "close");
+
+                      }
+
+                      //CIERRA EL dialog
+                      function closeDialog(){
+                        dialog.removeAttribute("open");
+                        a.removeAttribute("class", "close");
+                      }
+                    </script>
+                    <li><a onclick="showDialog()">Condiciones de uso & Aviso de privacidad</a></li>
+                    <!--<li><a href="productos.php  ">Productos</a></li>-->
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</html>
